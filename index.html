@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplier Game | Deposit & Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplier Game</h1>
+        <form id="depositForm">
+            <label for="depositAmount">Deposit amount:</label>
+            <input type="number" id="depositAmount" required>
+            <button type="button" onclick="handleAction('deposit')">Deposit</button>
+        </form>
+
+        <div id="depositedSection" style="display:none;">
+            <p>Deposited: <span id="depositedAmount">0.00</span></p>
+
+            <h2>Game</h2>
+            <form id="gameForm">
+                <label for="wagerAmount">Wager amount:</label>
+                <input type="number" id="wagerAmount" required>
+                <label for="multiplier">Multiplier (1x-5x):</label>
+                <input type="number" id="multiplier" min="1" max="5" required>
+                <button type="button" onclick="handleAction('playGame')">Play</button>
+            </form>
+
+            <div id="resultSection" style="display:none;">
+                <p>Winnings: <span id="winnings">0.00</span></p>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="handleAction('closeModal')">&times;</span>
+                <p id="modalMessage">Deposit more to continue playing.</p>
+                <button type="button" onclick="handleAction('closeModal')">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
